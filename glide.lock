@@ -1,0 +1,12 @@
+hash: ecd167ac6bc8b02fba8969aa511372bb2e8ccc0898c97ccda3642ceb94cb8053
+updated: 2018-08-21T23:13:45.0309833+08:00
+imports:
+- name: github.com/gin-gonic/gin
+  version: b869fe1415e4b9eb52f247441830d502aece2d4d
+- name: github.com/json-iterator/go
+  version: 1624edc4454b8682399def8740d46db5e4362ba4
+- name: github.com/mongodb/mongo-go-driver
+  version: 9b26cbb1a61aaedd6160e99c41fa514b04a1a245
+  subpackages:
+  - mongo
+testImports: []
