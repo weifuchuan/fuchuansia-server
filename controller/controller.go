@@ -14,6 +14,7 @@ import (
 	"strings"
 	"github.com/globalsign/mgo/bson"
 	"github.com/weifuchuan/fuchuansia-server/kit"
+	"log"
 )
 
 type H = map[string]interface{}
@@ -24,9 +25,9 @@ func GetProjects(c *gin.Context) {
 	projects := make([]H, 0)
 	err := query.All(&projects)
 	if err != nil {
-		kit.Logger.Println(err)
+		log.Println(err)
 		c.String(500, "error")
-		return
+		return 
 	}
 	for i := 0; i < len(projects); i++ {
 		projects[i]["_id"] = projects[i]["_id"].(bson.ObjectId).Hex()
@@ -61,14 +62,14 @@ func UploadMedia(c *gin.Context) {
 	}
 	file, err := c.FormFile("file")
 	if err != nil {
-		kit.Logger.Println(err)
+		log.Println(err)
 		c.String(http.StatusBadRequest, "error")
 		return
 	}
 	filename := Md5(file.Filename+time.Now().String()) + file.Filename[strings.LastIndex(file.Filename, "."):]
 	err = c.SaveUploadedFile(file, filepath.Join(rootPath(), "webapp/media/"+filename))
 	if err != nil {
-		kit.Logger.Println(err)
+		log.Println(err)
 		c.String(http.StatusBadRequest, "error")
 		return
 	}
@@ -86,7 +87,7 @@ func AddProject(c *gin.Context) {
 	}
 	req := new(Req)
 	if err := c.BindJSON(req); err != nil {
-		kit.Logger.Println(err)
+		log.Println(err)
 		return
 	}
 	if req.Token != kit.Config.Token {
@@ -96,7 +97,7 @@ func AddProject(c *gin.Context) {
 	//_, err := projects.InsertOne(c, H{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
 	err := projects.Insert(bson.M{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
 	if err != nil {
-		kit.Logger.Println(err)
+		log.Println(err)
 		c.String(500, "error")
 		return
 	}
