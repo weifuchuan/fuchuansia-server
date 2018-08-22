@@ -4,19 +4,20 @@ import (
 	"github.com/mongodb/mongo-go-driver/mongo"
 	"github.com/weifuchuan/fuchuansia-server/kit"
 	"log"
-	"context"
+	"github.com/globalsign/mgo"
 )
 
 var client *mongo.Client
+var session *mgo.Session
 
 func init() {
 	var err error
-	client, err = mongo.Connect(context.TODO(), kit.Config.Mongodb)
+	session, err = mgo.Dial(kit.Config.Mongodb)
 	if err != nil {
 		log.Fatal(err)
 	}
 }
 
-func Projects() *mongo.Collection {
-	return client.Database("fuchuansia").Collection("projects")
+func Projects() *mgo.Collection {
+	return session.DB("fuchuansia").C("projects")
 }

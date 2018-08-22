@@ -2,27 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8fa17c4-b0ae-44e3-a38e-185e88d33006" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kit/kit.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/css/main.b9f98a51.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/css/main.b9f98a51.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/js/1.e72b23af.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/js/1.e72b23af.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/js/2.5ebdefac.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/js/2.5ebdefac.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/js/3.5db55e98.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/js/3.5db55e98.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webapp/static/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/css/main.b9f98a51.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/css/main.b9f98a51.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/0.503ef4c4.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/0.503ef4c4.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/1.e72b23af.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/1.e72b23af.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/2.5ebdefac.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/2.5ebdefac.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/3.5db55e98.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/3.5db55e98.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/main.ad00cba8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/js/main.ad00cba8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/static/service-worker.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,8 +56,8 @@
       <file leaf-file-name="db.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/db.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="204">
+              <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="e#12#66#0" expanded="true" />
               </folding>
@@ -69,8 +68,8 @@
       <file leaf-file-name="controller.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/controller.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+            <state relative-caret-position="140">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="e#20#104#0" expanded="true" />
               </folding>
@@ -78,13 +77,9 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret column="663" selection-start-column="663" selection-end-column="663" />
-            </state>
-          </provider>
+      <file leaf-file-name="9a81a07703015910f7b081d04b7b4fbf.ico" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/media/9a81a07703015910f7b081d04b7b4fbf.ico">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="kit.go" pinned="false" current-in-tab="false">
@@ -126,15 +121,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ioutil.go" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Go/src/io/ioutil/ioutil.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -152,12 +138,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/kit/kit.go" />
-        <option value="$PROJECT_DIR$/db/db.go" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/model/model.go" />
-        <option value="$PROJECT_DIR$/controller/controller.go" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/webapp/index.html" />
+        <option value="$PROJECT_DIR$/db/db.go" />
+        <option value="$PROJECT_DIR$/controller/controller.go" />
       </list>
     </option>
   </component>
@@ -211,6 +197,12 @@
               <item name="fuchuansia-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="fuchuansia-server" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fuchuansia-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fuchuansia-server" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,9 +258,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19667171" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19667171" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Database" />
@@ -277,8 +268,8 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3284553" />
       <window_info anchor="bottom" id="Version Control" weight="0.3284553" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" weight="0.25203252" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -296,15 +287,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/controller/controller.go</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -345,23 +328,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/db.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#12#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/model.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Go/src/runtime/panic.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -386,10 +352,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/model.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/db.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#12#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/media/cef687873d39b37378f9e53d0c7ae860.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/media/9a81a07703015910f7b081d04b7b4fbf.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/controller.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        <state relative-caret-position="140">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="e#20#104#0" expanded="true" />
           </folding>

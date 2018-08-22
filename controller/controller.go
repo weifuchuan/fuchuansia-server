@@ -4,7 +4,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/weifuchuan/fuchuansia-server/db"
 	"log"
-	"github.com/weifuchuan/fuchuansia-server/model"
 	"io/ioutil"
 	"encoding/json"
 	"net/http"
@@ -14,6 +13,7 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"strings"
+	"github.com/globalsign/mgo/bson"
 )
 
 const (
@@ -24,22 +24,16 @@ type H = map[string]interface{}
 
 func GetProjects(c *gin.Context) {
 	col := db.Projects()
-	cursor, err := col.Find(c, H{})
+	query := col.Find(nil)
+	projects := make([]H, 0)
+	err := query.All(&projects)
 	if err != nil {
 		log.Println(err)
 		c.String(500, "error")
 		return
 	}
-	defer cursor.Close(c)
-	projects := make([]*model.Project, 0)
-	for cursor.Next(c) {
-		p := new(model.Project)
-		err := cursor.Decode(p)
-		if err != nil {
-			log.Println(err)
-			continue
-		}
-		projects = append(projects, p)
+	for i := 0; i < len(projects); i++ {
+		projects[i]["_id"] = projects[i]["_id"].(bson.ObjectId).Hex()
 	}
 	c.JSON(200, H{"projects": projects})
 }
@@ -103,13 +97,14 @@ func AddProject(c *gin.Context) {
 		c.String(500, "error")
 	}
 	projects := db.Projects()
-	_,err:=projects.InsertOne(c, H{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
-	if err!=nil{
+	//_, err := projects.InsertOne(c, H{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
+	err := projects.Insert(bson.M{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
+	if err != nil {
 		log.Println(err)
 		c.String(500, "error")
 		return
 	}
-	c.JSON(200, H{"result":"ok"})
+	c.JSON(200, H{"result": "ok"})
 }
 
 func rootPath() string {
