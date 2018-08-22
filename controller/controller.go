@@ -27,7 +27,7 @@ func GetProjects(c *gin.Context) {
 	if err != nil {
 		log.Println(err)
 		c.String(500, "error")
-		return 
+		return
 	}
 	for i := 0; i < len(projects); i++ {
 		projects[i]["_id"] = projects[i]["_id"].(bson.ObjectId).Hex()
@@ -112,4 +112,8 @@ func rootPath() string {
 func Md5(s string) string {
 	hash := md5.Sum([]byte(s))
 	return hex.EncodeToString(hash[:])
+}
+
+func init(){
+	log.SetFlags(log.Llongfile)
 }
