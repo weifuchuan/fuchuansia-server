@@ -3,11 +3,15 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/weifuchuan/fuchuansia-server/controller"
+	"github.com/weifuchuan/fuchuansia-server/kit"
+	"fmt"
 )
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
+
 	server := gin.Default()
-	//server.Static("/", "./webapp/")
+
 	server.Static("/static", "./webapp/static")
 	server.Static("/media", "./webapp/media")
 	server.GET("/", func(c *gin.Context) {
@@ -22,5 +26,5 @@ func main() {
 
 	server.POST("/media-upload", controller.UploadMedia)
 
-	server.Run(":9000")
+	server.Run(":" + fmt.Sprint(kit.Config.Port))
 }

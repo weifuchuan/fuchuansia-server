@@ -3,7 +3,6 @@ package controller
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/weifuchuan/fuchuansia-server/db"
-	"log"
 	"io/ioutil"
 	"encoding/json"
 	"net/http"
@@ -14,6 +13,7 @@ import (
 	"encoding/hex"
 	"strings"
 	"github.com/globalsign/mgo/bson"
+	"github.com/weifuchuan/fuchuansia-server/kit"
 )
 
 const (
@@ -28,7 +28,7 @@ func GetProjects(c *gin.Context) {
 	projects := make([]H, 0)
 	err := query.All(&projects)
 	if err != nil {
-		log.Println(err)
+		kit.Logger.Println(err)
 		c.String(500, "error")
 		return
 	}
@@ -65,14 +65,14 @@ func UploadMedia(c *gin.Context) {
 	}
 	file, err := c.FormFile("file")
 	if err != nil {
-		log.Println(err)
+		kit.Logger.Println(err)
 		c.String(http.StatusBadRequest, "error")
 		return
 	}
 	filename := Md5(file.Filename+time.Now().String()) + file.Filename[strings.LastIndex(file.Filename, "."):]
 	err = c.SaveUploadedFile(file, filepath.Join(rootPath(), "webapp/media/"+filename))
 	if err != nil {
-		log.Println(err)
+		kit.Logger.Println(err)
 		c.String(http.StatusBadRequest, "error")
 		return
 	}
@@ -90,7 +90,7 @@ func AddProject(c *gin.Context) {
 	}
 	req := new(Req)
 	if err := c.BindJSON(req); err != nil {
-		log.Println(err)
+		kit.Logger.Println(err)
 		return
 	}
 	if req.Token != token {
@@ -100,7 +100,7 @@ func AddProject(c *gin.Context) {
 	//_, err := projects.InsertOne(c, H{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
 	err := projects.Insert(bson.M{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
 	if err != nil {
-		log.Println(err)
+		kit.Logger.Println(err)
 		c.String(500, "error")
 		return
 	}

@@ -3,16 +3,18 @@ package kit
 import (
 	"os"
 	"path/filepath"
-	"github.com/labstack/gommon/log"
+	"log"
 	"io/ioutil"
 	"encoding/json"
 )
 
 type config struct {
 	Mongodb string `json:"mongodb"`
+	Port    uint   `json:"port"`
 }
 
 var Config config
+var Logger *log.Logger
 
 func init() {
 	dir, _ := os.Getwd()
@@ -29,4 +31,10 @@ func init() {
 	if err = json.Unmarshal(dat, &Config); err != nil {
 		log.Fatal(err)
 	}
+
+	logfile, err := os.Open("logs.log")
+	if err != nil {
+		log.Fatal(err)
+	}
+	Logger = log.New(logfile, "fuchuansia|> ", log.Llongfile)
 }
