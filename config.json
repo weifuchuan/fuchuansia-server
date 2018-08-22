@@ -1,4 +1,5 @@
 {
   "mongodb": "mongodb://127.0.0.1:27017/",
-  "port": 9000
+  "port": 9000,
+  "token": "ecb268c2a71ecebe597dd1f9bc55244948ad2d9d2b99901d038155244948"
 }

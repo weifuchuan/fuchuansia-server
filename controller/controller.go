@@ -16,10 +16,6 @@ import (
 	"github.com/weifuchuan/fuchuansia-server/kit"
 )
 
-const (
-	token = "ecb268c2a71ecebe597dd1f9bc55244948ad2d9d2b99901d038155244948"
-)
-
 type H = map[string]interface{}
 
 func GetProjects(c *gin.Context) {
@@ -50,7 +46,7 @@ func Auth(c *gin.Context) {
 		Token string `json:"token"`
 	}
 	json.Unmarshal(data, &req)
-	if req.Token == token {
+	if req.Token == kit.Config.Token {
 		c.JSON(200, H{"result": "ok"})
 	} else {
 		c.String(500, "error")
@@ -59,7 +55,7 @@ func Auth(c *gin.Context) {
 
 func UploadMedia(c *gin.Context) {
 	tkn := c.PostForm("token")
-	if tkn != token {
+	if tkn != kit.Config.Token {
 		c.String(http.StatusBadRequest, "error")
 		return
 	}
@@ -93,7 +89,7 @@ func AddProject(c *gin.Context) {
 		kit.Logger.Println(err)
 		return
 	}
-	if req.Token != token {
+	if req.Token != kit.Config.Token {
 		c.String(500, "error")
 	}
 	projects := db.Projects()

@@ -8,12 +8,10 @@ import (
 )
 
 func main() {
-	gin.SetMode(gin.ReleaseMode)
+	//gin.SetMode(gin.ReleaseMode)
 
 	server := gin.Default()
 
-	server.Static("/static", "./webapp/static")
-	server.Static("/media", "./webapp/media")
 	server.GET("/", func(c *gin.Context) {
 		c.File("./webapp/index.html")
 	})
