@@ -11,6 +11,7 @@ import (
 type config struct {
 	Mongodb string `json:"mongodb"`
 	Port    uint   `json:"port"`
+	Token string `json:"token"`
 }
 
 var Config config
