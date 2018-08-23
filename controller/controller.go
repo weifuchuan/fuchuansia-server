@@ -15,6 +15,7 @@ import (
 	"github.com/globalsign/mgo/bson"
 	"github.com/weifuchuan/fuchuansia-server/kit"
 	"log"
+	"sort"
 )
 
 type H = map[string]interface{}
@@ -32,6 +33,9 @@ func GetProjects(c *gin.Context) {
 	for i := 0; i < len(projects); i++ {
 		projects[i]["_id"] = projects[i]["_id"].(bson.ObjectId).Hex()
 	}
+	sort.Slice(projects, func(i, j int) bool {
+		return projects[i]["order"].(float64) < projects[j]["order"].(float64)
+	})
 	c.JSON(200, H{"projects": projects})
 }
 
@@ -114,6 +118,6 @@ func Md5(s string) string {
 	return hex.EncodeToString(hash[:])
 }
 
-func init(){
+func init() {
 	log.SetFlags(log.Llongfile)
 }

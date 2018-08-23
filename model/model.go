@@ -6,4 +6,5 @@ type Project struct {
 	Name    string `json:"name"`
 	Profile string `json:"profile"`
 	Detail  string `json:"detail"`
+	Order   int    `json:"order"`
 }
