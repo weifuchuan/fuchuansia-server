@@ -5,9 +5,12 @@ import (
 	"github.com/weifuchuan/fuchuansia-server/controller"
 	"github.com/weifuchuan/fuchuansia-server/kit"
 	"fmt"
+	"os"
 )
 
 func main() {
+	os.Mkdir("./webapp/media", os.ModeDir)
+
 	gin.SetMode(gin.ReleaseMode)
 
 	server := gin.Default()
