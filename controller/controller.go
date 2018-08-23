@@ -88,6 +88,7 @@ func AddProject(c *gin.Context) {
 		Icon    string `json:"icon"`
 		Profile string `json:"profile"`
 		Detail  string `json:"detail"`
+		Order   string `json:"order"`
 	}
 	req := new(Req)
 	if err := c.BindJSON(req); err != nil {
@@ -99,7 +100,7 @@ func AddProject(c *gin.Context) {
 	}
 	projects := db.Projects()
 	//_, err := projects.InsertOne(c, H{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
-	err := projects.Insert(bson.M{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail})
+	err := projects.Insert(bson.M{"name": req.Name, "icon": req.Icon, "profile": req.Profile, "detail": req.Detail, "order": req.Order})
 	if err != nil {
 		log.Println(err)
 		c.String(500, "error")
