@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-func main() { 
+func main() {
 
 	gin.SetMode(gin.ReleaseMode)
 
