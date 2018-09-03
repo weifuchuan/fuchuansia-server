@@ -13,8 +13,23 @@ func init() {
 	if err != nil {
 		kit.Logger.Fatal(err)
 	}
+	acs:=ArticleClasses()
+	if err=acs.EnsureIndex(mgo.Index{
+		Key:[]string{"name"},
+		Unique:true,
+	});err!=nil{
+		kit.Logger.Fatal(err)
+	}
 }
 
 func Projects() *mgo.Collection {
 	return session.DB("fuchuansia").C("projects")
+}
+
+func ArticleClasses() *mgo.Collection {
+	return session.DB("fuchuansia").C("articleClasses")
+}
+
+func Articles() *mgo.Collection {
+	return session.DB("fuchuansia").C("articles")
 }

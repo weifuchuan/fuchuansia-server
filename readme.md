@@ -1,0 +1,1 @@
+The config info of config.json is meaningless.

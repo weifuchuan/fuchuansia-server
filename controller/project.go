@@ -1,24 +1,25 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/weifuchuan/fuchuansia-server/db"
-	"io/ioutil"
-	"encoding/json"
-	"net/http"
-	"path/filepath"
-	"os"
-	"time"
 	"crypto/md5"
 	"encoding/hex"
-	"strings"
+	"encoding/json"
+	"github.com/gin-gonic/gin"
 	"github.com/globalsign/mgo/bson"
+	"github.com/weifuchuan/fuchuansia-server/db"
 	"github.com/weifuchuan/fuchuansia-server/kit"
+	"io/ioutil"
 	"log"
+	"net/http"
+	"os"
+	"path/filepath"
 	"sort"
+	"strings"
+	"time"
 )
 
 type H = map[string]interface{}
+type Any = interface{}
 
 func GetProjects(c *gin.Context) {
 	col := db.Projects()
@@ -106,7 +107,13 @@ func AddProject(c *gin.Context) {
 		c.String(500, "error")
 		return
 	}
-	c.JSON(200, H{"result": "ok"})
+	res := make(H)
+	if err = projects.Find(bson.M{"name": req.Name}).One(&res); err != nil {
+		log.Println(err)
+		c.String(500, "error")
+		return
+	}
+	c.JSON(200, H{"result": "ok", "id": res["_id"].(bson.ObjectId).Hex()})
 }
 
 func rootPath() string {

@@ -1,29 +1,48 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/weifuchuan/fuchuansia-server/controller"
 	"github.com/weifuchuan/fuchuansia-server/kit"
-	"fmt"
 )
 
 func main() {
 
 	gin.SetMode(gin.ReleaseMode)
 
-	server := gin.Default()
+	router := gin.Default()
 
-	server.GET("/", func(c *gin.Context) {
+	//router.Static("/static", "./webapp/static")
+
+	router.GET("/", func(c *gin.Context) {
 		c.File("./webapp/index.html")
 	})
 
-	server.POST("/project/get", controller.GetProjects)
+	group := router.Group("/project")
+	{
+		router.POST("/get", controller.GetProjects)
 
-	server.POST("/project/add", controller.AddProject)
+		router.POST("/add", controller.AddProject)
+	}
 
-	server.POST("/auth", controller.Auth)
+	router.POST("/auth", controller.Auth)
 
-	server.POST("/media-upload", controller.UploadMedia)
+	router.POST("/media-upload", controller.UploadMedia)
 
-	server.Run(":" + fmt.Sprint(kit.Config.Port))
+	group = router.Group("/article-class")
+	{
+		group.POST("/get", controller.GetArticleClass)
+		group.POST("/add", controller.AddArticleClass)
+	}
+
+	group = router.Group("/article")
+	{
+		group.POST("/get/base", controller.GetArticleBase)
+		group.POST("/get", controller.GetArticle)
+		group.POST("/add", controller.AddArticle)
+		group.POST("/update", controller.UpdateArticle)
+	}
+
+	router.Run(":" + fmt.Sprint(kit.Config.Port))
 }
