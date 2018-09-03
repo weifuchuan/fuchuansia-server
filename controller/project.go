@@ -55,6 +55,7 @@ func Auth(c *gin.Context) {
 	if req.Token == kit.Config.Token {
 		c.JSON(200, H{"result": "ok"})
 	} else {
+		kit.Logger.Println("Got token = " + req.Token)
 		c.String(500, "error")
 	}
 }
