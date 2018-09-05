@@ -21,9 +21,8 @@ func main() {
 
 	group := router.Group("/project")
 	{
-		router.POST("/get", controller.GetProjects)
-
-		router.POST("/add", controller.AddProject)
+		group.POST("/get", controller.GetProjects)
+		group.POST("/add", controller.AddProject)
 	}
 
 	router.POST("/auth", controller.Auth)
